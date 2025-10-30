@@ -11,5 +11,6 @@
     "@analogjs/vite-plugin-angular": "~1.19.1",
     "@nx/vite": "22.0.2"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "private": false
 }
