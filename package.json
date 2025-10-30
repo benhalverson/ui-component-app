@@ -9,7 +9,6 @@
     "e2e": "nx e2e e2e",
     "e2e:headed": "nx e2e e2e --headed --project=chromium"
   },
-  "private": true,
   "dependencies": {
     "@angular/cdk": "^20.2.10",
     "@angular/common": "~20.3.0",
