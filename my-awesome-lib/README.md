@@ -115,8 +115,6 @@ export class MyLoginComponent {
 ## 📚 Documentation
 
 - **[MODAL_USAGE.md](../MODAL_USAGE.md)** - Modal component usage guide (replaces alerts/confirms)
-- **[COMPONENT_DOCS.md](./COMPONENT_DOCS.md)** - Basic UI components reference
-- **[AUTH_DASHBOARD_DOCS.md](./AUTH_DASHBOARD_DOCS.md)** - Authentication & Dashboard guide
 - **[USAGE_EXAMPLES.md](./USAGE_EXAMPLES.md)** - Practical code examples
 
 ## 🔧 Development
