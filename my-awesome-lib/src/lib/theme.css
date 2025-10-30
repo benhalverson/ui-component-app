@@ -1,0 +1,183 @@
+/* My Awesome Lib - Material Theme with CSS Variables */
+
+:root {
+  /* Primary Color Palette */
+  --lib-primary-50: #eff6ff;
+  --lib-primary-100: #dbeafe;
+  --lib-primary-200: #bfdbfe;
+  --lib-primary-300: #93c5fd;
+  --lib-primary-400: #60a5fa;
+  --lib-primary-500: #3b82f6;
+  --lib-primary-600: #2563eb;
+  --lib-primary-700: #1d4ed8;
+  --lib-primary-800: #1e40af;
+  --lib-primary-900: #1e3a8a;
+
+  /* Secondary Color Palette */
+  --lib-secondary-50: #f9fafb;
+  --lib-secondary-100: #f3f4f6;
+  --lib-secondary-200: #e5e7eb;
+  --lib-secondary-300: #d1d5db;
+  --lib-secondary-400: #9ca3af;
+  --lib-secondary-500: #6b7280;
+  --lib-secondary-600: #4b5563;
+  --lib-secondary-700: #374151;
+  --lib-secondary-800: #1f2937;
+  --lib-secondary-900: #111827;
+
+  /* Success Color */
+  --lib-success-50: #ecfdf5;
+  --lib-success-500: #10b981;
+  --lib-success-700: #047857;
+
+  /* Error Color */
+  --lib-error-50: #fef2f2;
+  --lib-error-500: #ef4444;
+  --lib-error-700: #b91c1c;
+
+  /* Warning Color */
+  --lib-warning-50: #fffbeb;
+  --lib-warning-500: #f59e0b;
+  --lib-warning-700: #b45309;
+
+  /* Info Color */
+  --lib-info-50: #eff6ff;
+  --lib-info-500: #3b82f6;
+  --lib-info-700: #1d4ed8;
+
+  /* Neutral Colors */
+  --lib-white: #ffffff;
+  --lib-black: #000000;
+
+  /* Typography */
+  --lib-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --lib-font-size-xs: 0.75rem;
+  --lib-font-size-sm: 0.875rem;
+  --lib-font-size-base: 1rem;
+  --lib-font-size-lg: 1.125rem;
+  --lib-font-size-xl: 1.25rem;
+  --lib-font-size-2xl: 1.5rem;
+  --lib-font-size-3xl: 1.875rem;
+  --lib-font-size-4xl: 2.25rem;
+
+  /* Spacing */
+  --lib-spacing-1: 0.25rem;
+  --lib-spacing-2: 0.5rem;
+  --lib-spacing-3: 0.75rem;
+  --lib-spacing-4: 1rem;
+  --lib-spacing-5: 1.25rem;
+  --lib-spacing-6: 1.5rem;
+  --lib-spacing-8: 2rem;
+  --lib-spacing-10: 2.5rem;
+  --lib-spacing-12: 3rem;
+
+  /* Border Radius */
+  --lib-radius-sm: 0.25rem;
+  --lib-radius-md: 0.375rem;
+  --lib-radius-lg: 0.5rem;
+  --lib-radius-xl: 0.75rem;
+  --lib-radius-2xl: 1rem;
+  --lib-radius-full: 9999px;
+
+  /* Shadows */
+  --lib-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --lib-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --lib-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --lib-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* Component-specific Variables */
+  
+  /* Button */
+  --lib-button-padding: 0.625rem 1rem;
+  --lib-button-border-radius: var(--lib-radius-md);
+  --lib-button-font-size: var(--lib-font-size-sm);
+  --lib-button-font-weight: 500;
+  
+  /* Input */
+  --lib-input-border-color: var(--lib-secondary-300);
+  --lib-input-border-radius: var(--lib-radius-md);
+  --lib-input-bg: var(--lib-white);
+  --lib-input-padding: 0.625rem 0.875rem;
+  --lib-input-font-size: var(--lib-font-size-sm);
+  --lib-input-text-color: var(--lib-secondary-900);
+  --lib-input-placeholder-color: var(--lib-secondary-400);
+  --lib-input-focus-color: var(--lib-primary-500);
+  --lib-input-focus-shadow: rgba(59, 130, 246, 0.1);
+  --lib-input-error-color: var(--lib-error-500);
+  --lib-input-label-size: var(--lib-font-size-sm);
+  --lib-input-label-weight: 500;
+  --lib-input-label-color: var(--lib-secondary-700);
+  --lib-input-required-color: var(--lib-error-500);
+  --lib-input-hint-size: var(--lib-font-size-xs);
+  --lib-input-hint-color: var(--lib-secondary-500);
+  --lib-input-error-size: var(--lib-font-size-xs);
+  --lib-input-affix-color: var(--lib-secondary-500);
+
+  /* Checkbox */
+  --lib-checkbox-size: 1.125rem;
+  --lib-checkbox-border-color: var(--lib-secondary-300);
+  --lib-checkbox-border-radius: var(--lib-radius-sm);
+  --lib-checkbox-bg: var(--lib-white);
+  --lib-checkbox-checked-bg: var(--lib-primary-500);
+  --lib-checkbox-checked-border: var(--lib-primary-500);
+  --lib-checkbox-hover-border: var(--lib-primary-500);
+  --lib-checkbox-label-size: var(--lib-font-size-sm);
+  --lib-checkbox-label-color: var(--lib-secondary-700);
+
+  /* Card */
+  --lib-card-bg: var(--lib-white);
+  --lib-card-border: var(--lib-secondary-200);
+  --lib-card-border-radius: var(--lib-radius-lg);
+  --lib-card-padding: var(--lib-spacing-6);
+  --lib-card-shadow: var(--lib-shadow-md);
+
+  /* Table */
+  --lib-table-border: var(--lib-secondary-200);
+  --lib-table-header-bg: var(--lib-secondary-50);
+  --lib-table-hover-bg: var(--lib-secondary-100);
+  --lib-table-text-color: var(--lib-secondary-900);
+
+  /* Form Field */
+  --lib-form-field-gap: var(--lib-spacing-2);
+  --lib-form-field-margin: var(--lib-spacing-5);
+
+  /* Transitions */
+  --lib-transition-fast: 150ms;
+  --lib-transition-base: 200ms;
+  --lib-transition-slow: 300ms;
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --lib-secondary-50: #1f2937;
+    --lib-secondary-100: #374151;
+    --lib-secondary-200: #4b5563;
+    --lib-secondary-300: #6b7280;
+    --lib-secondary-400: #9ca3af;
+    --lib-secondary-500: #d1d5db;
+    --lib-secondary-600: #e5e7eb;
+    --lib-secondary-700: #f3f4f6;
+    --lib-secondary-800: #f9fafb;
+    --lib-secondary-900: #ffffff;
+
+    --lib-input-bg: #1f2937;
+    --lib-input-text-color: #f3f4f6;
+    --lib-input-border-color: #4b5563;
+    
+    --lib-card-bg: #1f2937;
+    --lib-card-border: #374151;
+    
+    --lib-checkbox-bg: #1f2937;
+    --lib-checkbox-border-color: #4b5563;
+    
+    --lib-table-header-bg: #374151;
+    --lib-table-hover-bg: #4b5563;
+  }
+}
+
+/* Material Design Elevation */
+.lib-elevation-1 { box-shadow: var(--lib-shadow-sm); }
+.lib-elevation-2 { box-shadow: var(--lib-shadow-md); }
+.lib-elevation-3 { box-shadow: var(--lib-shadow-lg); }
+.lib-elevation-4 { box-shadow: var(--lib-shadow-xl); }

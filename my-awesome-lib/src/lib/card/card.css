@@ -1,0 +1,47 @@
+.lib-card {
+  background-color: var(--lib-card-bg, white);
+  border-radius: 0.5rem;
+  border: 1px solid var(--lib-card-border, #e5e7eb);
+  overflow: hidden;
+  transition: box-shadow 0.2s, background-color 0.3s, border-color 0.3s;
+}
+
+.lib-card-elevated {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.lib-card-elevated:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.lib-card-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--lib-card-border, #e5e7eb);
+}
+
+.lib-card-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--lib-card-title-color, #111827);
+}
+
+.lib-card-content {
+  padding: 1.5rem;
+  color: var(--lib-card-text-color, #374151);
+}
+
+.lib-card-footer {
+  padding: 1rem 1.5rem;
+  background-color: var(--lib-card-footer-bg, #f9fafb);
+  border-top: 1px solid var(--lib-card-border, #e5e7eb);
+}
+
+/* Dark mode */
+:host-context(.dark-mode) .lib-card {
+  --lib-card-bg: #1f2937;
+  --lib-card-border: #374151;
+  --lib-card-title-color: #f9fafb;
+  --lib-card-text-color: #d1d5db;
+  --lib-card-footer-bg: #111827;
+}

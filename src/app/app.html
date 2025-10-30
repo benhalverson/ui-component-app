@@ -1,2 +1,45 @@
-<app-nx-welcome></app-nx-welcome>
-<router-outlet></router-outlet>
+<div class="app-container">
+  <mat-toolbar color="primary">
+    <span class="logo" routerLink="/" style="cursor: pointer; font-weight: 700;">
+      🚀 My Awesome Library
+    </span>
+    <span class="spacer" style="flex: 1 1 auto"></span>
+    <a mat-button data-testid="nav-home" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a mat-button data-testid="nav-buttons" routerLink="/buttons" routerLinkActive="active">Buttons</a>
+    <a mat-button data-testid="nav-cards" routerLink="/cards" routerLinkActive="active">Cards</a>
+    <a mat-button data-testid="nav-tables" routerLink="/tables" routerLinkActive="active">Tables</a>
+    <a mat-button data-testid="nav-forms" routerLink="/forms" routerLinkActive="active">Forms</a>
+    <a mat-button data-testid="nav-login" routerLink="/login" routerLinkActive="active">Login</a>
+    <button
+      mat-icon-button
+      class="theme-toggle"
+      (click)="toggleTheme()"
+      [attr.aria-label]="themeService.isDarkMode() ? 'Switch to light mode' : 'Switch to dark mode'"
+      [title]="themeService.isDarkMode() ? 'Switch to light mode' : 'Switch to dark mode'"
+      [textContent]="themeService.isDarkMode() ? '☀️' : '🌙'">
+    </button>
+  </mat-toolbar>
+
+  <main class="app-main">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer class="app-footer">
+    <p>Built with ❤️ using Angular Material & My Awesome Component Library</p>
+  </footer>
+</div>
+
+<!-- Global Modal -->
+@if (modalState$ | async; as modalState) {
+<lib-modal
+  [isOpen]="modalState.isOpen"
+  [title]="modalState.title"
+  [message]="modalState.message"
+  [confirmText]="modalState.confirmText"
+  [cancelText]="modalState.cancelText"
+  [showCancel]="modalState.showCancel"
+  [variant]="modalState.variant"
+  (confirmed)="onModalConfirm()"
+  (cancelled)="onModalCancel()"
+></lib-modal>
+}

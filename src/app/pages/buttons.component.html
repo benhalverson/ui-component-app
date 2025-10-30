@@ -1,0 +1,63 @@
+<div class="page-container">
+  <div class="page-header">
+    <h1>Button Components</h1>
+    <p class="page-description">Angular Material buttons in multiple variants and states</p>
+  </div>
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Button Variants</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="button-showcase">
+        <div class="button-group">
+          <h3>Primary Buttons</h3>
+          <button mat-raised-button color="primary" data-testid="btn-save" (click)="onSave()">Save</button>
+          <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
+          <button mat-raised-button color="primary" disabled>Disabled</button>
+        </div>
+
+        <div class="button-group">
+          <h3>Secondary Buttons</h3>
+          <button mat-stroked-button data-testid="btn-cancel" (click)="onCancel()">Cancel</button>
+          <button mat-stroked-button>Settings</button>
+          <button mat-stroked-button disabled>Disabled</button>
+        </div>
+
+        <div class="button-group">
+          <h3>Outline / Icon Buttons</h3>
+          <button mat-outlined-button>Edit</button>
+          <button mat-outlined-button color="warn" data-testid="btn-delete" (click)="onDelete()">Delete</button>
+          <button mat-icon-button aria-label="Favorite">
+            ❤
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Button Sizes</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="button-showcase">
+        <div class="button-group">
+          <h3>Density Tweaks</h3>
+          <button mat-raised-button color="primary" class="dense">Small</button>
+          <button mat-raised-button color="primary">Default</button>
+          <button mat-raised-button color="primary" class="spacious">Large</button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Code Example</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <pre><code>{{codeExample}}</code></pre>
+    </mat-card-content>
+  </mat-card>
+</div>

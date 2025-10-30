@@ -1,0 +1,58 @@
+@if (isOpen()) {
+<div class="lib-modal-overlay" 
+     (click)="onOverlayClick()"
+     (keydown.escape)="onCancel()"
+     (keydown)="$event.key === 'Escape' && onCancel()"
+     tabindex="0"
+     role="dialog"
+     aria-modal="true">
+  <div class="lib-modal-container" 
+       cdkTrapFocus
+       [class.lib-modal-danger]="variant() === 'danger'"
+       [class.lib-modal-success]="variant() === 'success'"
+       [class.lib-modal-warning]="variant() === 'warning'"
+       (click)="$event.stopPropagation()"
+       (keydown)="$event.stopPropagation()"
+       role="document">
+    @if (title()) {
+    <div class="lib-modal-header">
+      <h3 class="lib-modal-title" [textContent]="title()">{{ title() }}</h3>
+      <button class="lib-modal-close" (click)="onCancel()" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    }
+
+    <div class="lib-modal-body">
+      <ng-content></ng-content>
+      @if (message()) {
+      <p class="lib-modal-message" [textContent]="message()"></p>
+      }
+    </div>
+
+    @if (showFooter()) {
+    <div class="lib-modal-footer">
+      @if (showCancel()) {
+      <button 
+        class="lib-modal-button lib-modal-button-secondary"
+        (click)="onCancel()"
+        type="button"
+        [textContent]="cancelText()">
+      </button>
+      }
+      <button 
+        class="lib-modal-button lib-modal-button-primary"
+        [class.lib-modal-button-danger]="variant() === 'danger'"
+        [class.lib-modal-button-success]="variant() === 'success'"
+        [class.lib-modal-button-warning]="variant() === 'warning'"
+        (click)="onConfirm()"
+        type="button"
+        [textContent]="confirmText()">
+      </button>
+    </div>
+    }
+  </div>
+</div>
+}

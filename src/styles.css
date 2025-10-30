@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Angular Material theme */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+/* Import My Awesome Lib Theme */
+@import '../my-awesome-lib/src/lib/theme.css';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --app-bg-gradient-start: #667eea;
+  --app-bg-gradient-end: #764ba2;
+  --app-text-color: #ffffff;
+  --app-text-muted: rgba(255, 255, 255, 0.9);
+  --app-card-bg: #ffffff;
+  --app-card-text: #374151;
+  --app-border-color: #e5e7eb;
+  --lib-card-bg: #ffffff;
+  --lib-card-border: #e5e7eb;
+  --lib-card-title-color: #111827;
+  --lib-card-text-color: #374151;
+  --lib-card-footer-bg: #f9fafb;
+}
+
+body {
+  font-family: var(--lib-font-family);
+  line-height: 1.5;
+  color: #1f2937;
+  background: var(--lib-secondary-50);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  --app-bg-gradient-start: #1a1a2e;
+  --app-bg-gradient-end: #16213e;
+  --app-text-color: #f9fafb;
+  --app-text-muted: #d1d5db;
+  --app-card-bg: #1f2937;
+  --app-card-text: #d1d5db;
+  --app-border-color: #374151;
+  --lib-card-bg: #1f2937;
+  --lib-card-border: #374151;
+  --lib-card-title-color: #f9fafb;
+  --lib-card-text-color: #d1d5db;
+  --lib-card-footer-bg: #111827;
+}
+
+.dark-mode body {
+  color: #f9fafb;
+  background: #111827;
+}

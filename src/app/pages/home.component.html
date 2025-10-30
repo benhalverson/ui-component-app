@@ -1,0 +1,60 @@
+<div class="home-container">
+  <lib-card [elevated]="true" class="hero-card">
+    <div class="hero-content">
+      <h1>🚀 My Awesome Component Library</h1>
+      <p class="subtitle">A modern Angular component library with Material Design theming</p>
+      
+      <div class="features">
+        <div class="feature">
+          <span class="icon">🎨</span>
+          <h3>Building Blocks</h3>
+          <p>Reusable components that you compose into features</p>
+        </div>
+        <div class="feature">
+          <span class="icon">🌙</span>
+          <h3>Dark Mode</h3>
+          <p>Automatic dark mode support with CSS variables</p>
+        </div>
+        <div class="feature">
+          <span class="icon">♿</span>
+          <h3>Accessible</h3>
+          <p>WCAG compliant with ARIA attributes</p>
+        </div>
+        <div class="feature">
+          <span class="icon">⚡</span>
+          <h3>Modern Stack</h3>
+          <p>Built with Angular 20, CDK, and standalone components</p>
+        </div>
+      </div>
+
+      <div class="cta-buttons">
+        <lib-button variant="primary" routerLink="/buttons">
+          View Components
+        </lib-button>
+        <lib-button variant="outline" routerLink="/forms">
+          Try Forms
+        </lib-button>
+      </div>
+    </div>
+  </lib-card>
+
+  <div class="quick-links">
+    <lib-card title="UI Components" [elevated]="true">
+      <p>Explore buttons, cards, tables, and modals</p>
+      <lib-button variant="outline" routerLink="/buttons">Buttons</lib-button>
+      <lib-button variant="outline" routerLink="/cards">Cards</lib-button>
+      <lib-button variant="outline" routerLink="/tables">Tables</lib-button>
+    </lib-card>
+
+    <lib-card title="Form Components" [elevated]="true">
+      <p>Build forms with inputs, checkboxes, and validation</p>
+      <lib-button variant="outline" routerLink="/forms">Forms Demo</lib-button>
+      <lib-button variant="outline" routerLink="/login">Login Example</lib-button>
+    </lib-card>
+
+    <lib-card title="Documentation" [elevated]="true">
+      <p>Learn how to use and customize components</p>
+      <lib-button variant="outline" href="https://github.com" target="_blank">GitHub</lib-button>
+    </lib-card>
+  </div>
+</div>

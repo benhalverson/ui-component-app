@@ -1,0 +1,174 @@
+.lib-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.lib-modal-container {
+  background: var(--lib-modal-bg, #ffffff);
+  border-radius: var(--lib-modal-radius, 0.5rem);
+  box-shadow: var(--lib-modal-shadow, 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04));
+  max-width: var(--lib-modal-max-width, 28rem);
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.lib-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--lib-modal-header-padding, 1.5rem);
+  border-bottom: 1px solid var(--lib-modal-border-color, #e5e7eb);
+}
+
+.lib-modal-title {
+  margin: 0;
+  font-size: var(--lib-modal-title-size, 1.25rem);
+  font-weight: 600;
+  color: var(--lib-modal-title-color, #111827);
+}
+
+.lib-modal-close {
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  cursor: pointer;
+  color: var(--lib-modal-close-color, #6b7280);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.lib-modal-close:hover {
+  background-color: var(--lib-modal-close-hover-bg, #f3f4f6);
+  color: var(--lib-modal-close-hover-color, #111827);
+}
+
+.lib-modal-body {
+  padding: var(--lib-modal-body-padding, 1.5rem);
+  overflow-y: auto;
+  flex: 1;
+}
+
+.lib-modal-message {
+  margin: 0;
+  color: var(--lib-modal-message-color, #4b5563);
+  line-height: 1.5;
+}
+
+.lib-modal-footer {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  padding: var(--lib-modal-footer-padding, 1.5rem);
+  border-top: 1px solid var(--lib-modal-border-color, #e5e7eb);
+}
+
+.lib-modal-button {
+  padding: var(--lib-modal-button-padding, 0.625rem 1.25rem);
+  font-size: var(--lib-modal-button-font-size, 0.875rem);
+  font-weight: 500;
+  border-radius: var(--lib-modal-button-radius, 0.375rem);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.lib-modal-button-secondary {
+  background-color: var(--lib-modal-button-secondary-bg, #ffffff);
+  color: var(--lib-modal-button-secondary-color, #374151);
+  border: 1px solid var(--lib-modal-button-secondary-border, #d1d5db);
+}
+
+.lib-modal-button-secondary:hover {
+  background-color: var(--lib-modal-button-secondary-hover-bg, #f9fafb);
+}
+
+.lib-modal-button-primary {
+  background-color: var(--lib-modal-button-primary-bg, #3b82f6);
+  color: var(--lib-modal-button-primary-color, #ffffff);
+  border: 1px solid transparent;
+}
+
+.lib-modal-button-primary:hover {
+  background-color: var(--lib-modal-button-primary-hover-bg, #2563eb);
+}
+
+.lib-modal-button-danger {
+  background-color: var(--lib-modal-button-danger-bg, #ef4444);
+}
+
+.lib-modal-button-danger:hover {
+  background-color: var(--lib-modal-button-danger-hover-bg, #dc2626);
+}
+
+.lib-modal-button-success {
+  background-color: var(--lib-modal-button-success-bg, #10b981);
+}
+
+.lib-modal-button-success:hover {
+  background-color: var(--lib-modal-button-success-hover-bg, #059669);
+}
+
+.lib-modal-button-warning {
+  background-color: var(--lib-modal-button-warning-bg, #f59e0b);
+}
+
+.lib-modal-button-warning:hover {
+  background-color: var(--lib-modal-button-warning-hover-bg, #d97706);
+}
+
+.lib-modal-danger .lib-modal-title {
+  color: var(--lib-modal-danger-color, #dc2626);
+}
+
+.lib-modal-success .lib-modal-title {
+  color: var(--lib-modal-success-color, #059669);
+}
+
+.lib-modal-warning .lib-modal-title {
+  color: var(--lib-modal-warning-color, #d97706);
+}
+
+@media (prefers-color-scheme: dark) {
+  .lib-modal-container {
+    background: var(--lib-modal-bg-dark, #1f2937);
+  }
+
+  .lib-modal-title {
+    color: var(--lib-modal-title-color-dark, #f9fafb);
+  }
+
+  .lib-modal-message {
+    color: var(--lib-modal-message-color-dark, #d1d5db);
+  }
+
+  .lib-modal-header,
+  .lib-modal-footer {
+    border-color: var(--lib-modal-border-color-dark, #374151);
+  }
+
+  .lib-modal-button-secondary {
+    background-color: var(--lib-modal-button-secondary-bg-dark, #374151);
+    color: var(--lib-modal-button-secondary-color-dark, #f9fafb);
+    border-color: var(--lib-modal-button-secondary-border-dark, #4b5563);
+  }
+
+  .lib-modal-button-secondary:hover {
+    background-color: var(--lib-modal-button-secondary-hover-bg-dark, #4b5563);
+  }
+}

@@ -1,8 +1,7 @@
 import { test, expect } from '@playwright/test';
 
-test('has title', async ({ page }) => {
+test('home has hero heading', async ({ page }) => {
   await page.goto('/');
-
-  // Expect h1 to contain a substring.
-  expect(await page.locator('h1').innerText()).toContain('Welcome');
+  const h1 = page.getByRole('heading', { level: 1 });
+  await expect(h1).toContainText('My Awesome Component Library');
 });

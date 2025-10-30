@@ -1,16 +1,5 @@
 # MyApp
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
-
-✨ Your new, shiny [Nx workspace](https://nx.dev) is almost ready ✨.
-
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/angular-standalone-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
-
-## Finish your CI setup
-
-[Click here to finish setting up your workspace!](https://cloud.nx.app/connect/nT7c9tpu23)
-
-
 ## Run tasks
 
 To run the dev server for your app, use:
@@ -34,6 +23,30 @@ npx nx show project my-app
 These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
 
 [More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+
+## End-to-end tests (Playwright)
+
+Playwright is configured under `e2e/` with a preset that will start the dev server automatically.
+
+Quick runs:
+
+```sh
+# Install browsers (one-time)
+pnpm exec playwright install
+
+# Install Linux system deps (one-time, Ubuntu/Debian; requires sudo)
+pnpm exec playwright install-deps
+
+# Run all e2e tests (headless across Chromium/Firefox/WebKit)
+pnpm run e2e
+
+# Run headed Chromium only
+pnpm run e2e:headed
+```
+
+Notes:
+- The server is started from `playwright.config.ts` (`my-app:serve`) with `reuseExistingServer: true`.
+- You can override the base URL by setting `BASE_URL` env (e.g. a deployed site).
 
 ## Add new projects
 

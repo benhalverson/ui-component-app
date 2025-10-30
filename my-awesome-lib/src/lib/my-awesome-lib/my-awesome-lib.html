@@ -1,0 +1,38 @@
+<div class="demo-container">
+  <h1>My Awesome Component Library</h1>
+  
+  <section class="demo-section">
+    <h2>Buttons</h2>
+    <div class="button-group">
+      <lib-button variant="primary">Primary Button</lib-button>
+      <lib-button variant="secondary">Secondary Button</lib-button>
+      <lib-button variant="outline">Outline Button</lib-button>
+      <lib-button variant="primary" [disabled]="true">Disabled Button</lib-button>
+    </div>
+  </section>
+
+  <section class="demo-section">
+    <h2>Cards</h2>
+    <div class="card-grid">
+      <lib-card title="Basic Card">
+        <p>This is a basic card component with a title and content.</p>
+      </lib-card>
+      
+      <lib-card [elevated]="true">
+        <div header>
+          <h3 style="margin: 0;">Custom Header</h3>
+          <p style="margin: 0.5rem 0 0 0; color: #6b7280; font-size: 0.875rem;">With subtitle</p>
+        </div>
+        <p>This card has a custom header section and elevation.</p>
+        <div footer>
+          <lib-button variant="primary">Action</lib-button>
+        </div>
+      </lib-card>
+    </div>
+  </section>
+
+  <section class="demo-section">
+    <h2>Table</h2>
+    <lib-table [columns]="tableColumns" [data]="tableData"></lib-table>
+  </section>
+</div>

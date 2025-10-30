@@ -1,0 +1,92 @@
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.page-header {
+  background: var(--app-card-bg);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #111827;
+}
+
+.page-description {
+  margin: 0;
+  font-size: 1.125rem;
+  color: #6b7280;
+}
+
+:host-context(.dark-mode) .page-header h1 {
+  color: #f9fafb;
+}
+
+:host-context(.dark-mode) .page-description {
+  color: #d1d5db;
+}
+
+lib-card {
+  margin-bottom: 2rem;
+}
+
+.button-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.button-group h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.button-group lib-button {
+  align-self: flex-start;
+}
+
+.info-text {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin: 0 0 0.5rem;
+}
+
+:host-context(.dark-mode) .info-text {
+  color: #d1d5db;
+}
+
+pre {
+  background: #f3f4f6;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 0;
+}
+
+code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  color: #1f2937;
+}
+
+:host-context(.dark-mode) pre {
+  background: #111827;
+}
+
+:host-context(.dark-mode) code {
+  color: #f9fafb;
+}
