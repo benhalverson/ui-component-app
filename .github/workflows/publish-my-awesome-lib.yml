@@ -56,11 +56,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Determine and bump version (conventional commits)
-        run: pnpm nx release version --projects=my-awesome-lib --first-release --git-commit --git-tag
-
-      - name: Generate changelog
-        run: pnpm nx release changelog --projects=my-awesome-lib --git-commit
-
-      - name: Publish to npm (my-awesome-lib only)
-        run: pnpm nx release publish --projects=my-awesome-lib
+      - name: Version, changelog, and publish (single command)
+        run: pnpm nx release --projects=my-awesome-lib --first-release
