@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { LibModal } from 'my-awesome-lib';
+import { LibModal } from '@benhalverson/my-awesome-lib';
 import { ModalService } from './services/modal.service';
 import { ThemeService } from './services/theme.service';
 import { MatToolbarModule } from '@angular/material/toolbar';

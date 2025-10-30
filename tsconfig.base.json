@@ -9,7 +9,7 @@
     "baseUrl": ".",
     "paths": {
       "@my-app/component-lib": ["component-lib/src/index.ts"],
-      "my-awesome-lib": ["my-awesome-lib/src/index.ts"]
+      "@benhalverson/my-awesome-lib": ["my-awesome-lib/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

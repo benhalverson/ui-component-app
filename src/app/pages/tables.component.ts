@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { LibButton, LibCard, LibTable } from 'my-awesome-lib';
-import type { TableColumn } from 'my-awesome-lib';
+import { LibButton, LibCard, LibTable } from '@benhalverson/my-awesome-lib';
+import type { TableColumn } from '@benhalverson/my-awesome-lib';
 import { ModalService } from '../services/modal.service';
 
 @Component({
@@ -159,8 +159,8 @@ export class TablesComponent {
     { id: 4, name: 'Database Migration', status: 'Pending', progress: '20%', dueDate: '2025-11-30' },
   ];
 
-  codeExample = `import { LibTable } from 'my-awesome-lib';
-import type { TableColumn } from 'my-awesome-lib';
+  codeExample = `import { LibTable } from '@benhalverson/my-awesome-lib';
+import type { TableColumn } from '@benhalverson/my-awesome-lib';
 
 @Component({
   imports: [LibTable],

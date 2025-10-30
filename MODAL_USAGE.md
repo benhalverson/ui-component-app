@@ -44,7 +44,7 @@ export class MyComponent {
 For more control, use the component directly:
 
 ```typescript
-import { LibModal } from 'my-awesome-lib';
+import { LibModal } from '@benhalverson/my-awesome-lib';
 
 @Component({
   imports: [LibModal],

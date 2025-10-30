@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { LibButton, LibCard } from 'my-awesome-lib';
+import { LibButton, LibCard } from '@benhalverson/my-awesome-lib';
 
 @Component({
   selector: 'app-home',

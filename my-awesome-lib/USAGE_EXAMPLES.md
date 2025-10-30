@@ -11,7 +11,7 @@ Here's how to build a complete login form using our building blocks:
 ```typescript
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { LibButton, LibCard, LibInput, LibCheckbox, LibFormField } from '@my-app/my-awesome-lib';
+import { LibButton, LibCard, LibInput, LibCheckbox, LibFormField } from '@benhalverson/my-awesome-lib';
 
 @Component({
   selector: 'app-example',

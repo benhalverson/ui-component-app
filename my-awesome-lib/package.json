@@ -1,6 +1,6 @@
 {
-  "name": "my-awesome-lib",
-  "version": "0.0.1",
+  "name": "@benhalverson/my-awesome-lib",
+  "version": "0.0.2",
   "description": "A modern Angular component library providing reusable building blocks with Material Design theming",
   "author": "benhalverson",
   "license": "MIT",

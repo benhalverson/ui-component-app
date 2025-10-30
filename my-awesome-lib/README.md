@@ -56,7 +56,7 @@ import {
   LibInput,
   LibCheckbox,
   LibFormField
-} from '@my-app/my-awesome-lib';
+} from '@benhalverson/my-awesome-lib';
 import { ReactiveFormsModule } from '@angular/forms';
 ```
 

@@ -47,14 +47,10 @@ jobs:
       - name: Build library
         run: pnpm nx build my-awesome-lib
 
-      - name: Configure npm auth
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
-
       - name: Configure git user
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Version, changelog, and publish (single command)
-        run: pnpm nx release --projects=my-awesome-lib --first-release
+        run: pnpm nx release --projects=my-awesome-lib --first-release --yes

@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { LibButton, LibCard, LibInput, LibCheckbox, LibFormField } from 'my-awesome-lib';
+import { LibButton, LibCard, LibInput, LibCheckbox, LibFormField } from '@benhalverson/my-awesome-lib';
 import { ModalService } from '../services/modal.service';
 
 @Component({
@@ -303,7 +303,7 @@ export class FormsComponent {
     return selected.length > 0 ? selected.join(', ') : 'None';
   }
 
-  codeExample = `import { LibInput, LibCheckbox, LibFormField } from 'my-awesome-lib';
+  codeExample = `import { LibInput, LibCheckbox, LibFormField } from '@benhalverson/my-awesome-lib';
 import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
 
 @Component({

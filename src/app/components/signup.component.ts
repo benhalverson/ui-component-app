@@ -1,7 +1,7 @@
 import { Component, Output, EventEmitter, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, AbstractControl } from '@angular/forms';
-import { LibButton, LibCard, LibInput, LibCheckbox, LibFormField } from 'my-awesome-lib';
+import { LibButton, LibCard, LibInput, LibCheckbox, LibFormField } from '@benhalverson/my-awesome-lib';
 
 export interface SignupData {
   fullName: string;

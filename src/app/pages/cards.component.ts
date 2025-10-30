@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
-import { LibButton, LibCard } from 'my-awesome-lib';
+import { LibButton, LibCard } from '@benhalverson/my-awesome-lib';
 
 @Component({
   selector: 'app-cards',
@@ -237,7 +237,7 @@ import { LibButton, LibCard } from 'my-awesome-lib';
 export class CardsComponent {
   currentDate = new Date();
 
-  codeExample = `import { LibCard, LibButton } from 'my-awesome-lib';
+  codeExample = `import { LibCard, LibButton } from '@benhalverson/my-awesome-lib';
 
 @Component({
   imports: [LibCard, LibButton],

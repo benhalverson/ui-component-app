@@ -13,7 +13,7 @@ import { MatCardModule } from '@angular/material/card';
 export class ButtonsComponent {
   private modalService = inject(ModalService);
 
-  codeExample = `import { LibButton } from 'my-awesome-lib';
+  codeExample = `import { LibButton } from '@benhalverson/my-awesome-lib';
 
 @Component({
   imports: [LibButton],
