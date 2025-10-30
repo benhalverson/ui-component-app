@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, AbstractControl } from '@angular/forms';
 import { LibButton, LibCard, LibInput, LibCheckbox, LibFormField } from 'my-awesome-lib';
@@ -172,19 +172,16 @@ export class SignupComponent {
   @Output() loginClick = new EventEmitter<void>();
 
   loading = false;
-  signupForm: FormGroup;
-
-  constructor(private fb: FormBuilder) {
-    this.signupForm = this.fb.group({
-      fullName: ['', [Validators.required, Validators.minLength(2)]],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
-      confirmPassword: ['', [Validators.required]],
-      agreeToTerms: [false, [Validators.requiredTrue]]
-    }, {
-      validators: this.passwordMatchValidator
-    });
-  }
+  private fb = inject(FormBuilder);
+  signupForm: FormGroup = this.fb.group({
+    fullName: ['', [Validators.required, Validators.minLength(2)]],
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(8)]],
+    confirmPassword: ['', [Validators.required]],
+    agreeToTerms: [false, [Validators.requiredTrue]]
+  }, {
+    validators: this.passwordMatchValidator
+  });
 
   passwordMatchValidator(control: AbstractControl): { [key: string]: boolean } | null {
     const password = control.get('password');
@@ -234,7 +231,7 @@ export class SignupComponent {
     if (this.signupForm.valid && !this.loading) {
       this.loading = true;
       this.signup.emit(this.signupForm.value);
-      setTimeout(() => this.loading = false, 1000);
+      setTimeout(() => { this.loading = false; }, 1000);
     }
   }
 

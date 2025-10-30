@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LibButton, LibCard, LibInput, LibCheckbox, LibFormField } from 'my-awesome-lib';
@@ -140,15 +140,12 @@ export class LoginComponent {
   @Output() signupClick = new EventEmitter<void>();
 
   loading = false;
-  loginForm: FormGroup;
-
-  constructor(private fb: FormBuilder) {
-    this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      rememberMe: [false]
-    });
-  }
+  private fb = inject(FormBuilder);
+  loginForm: FormGroup = this.fb.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(6)]],
+    rememberMe: [false]
+  });
 
   getErrorMessage(field: string): string {
     const control = this.loginForm.get(field);
@@ -172,7 +169,7 @@ export class LoginComponent {
     if (this.loginForm.valid && !this.loading) {
       this.loading = true;
       this.login.emit(this.loginForm.value);
-      setTimeout(() => this.loading = false, 1000);
+      setTimeout(() => { this.loading = false; }, 1000);
     }
   }
 
