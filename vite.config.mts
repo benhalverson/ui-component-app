@@ -20,6 +20,10 @@ export default defineConfig(() => ({
     include: ['{src,tests}/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     setupFiles: ['src/test-setup.ts'],
     reporters: ['default'],
+    // Run library tests from this root via Vitest projects (preferred over vitest.workspace.ts)
+    projects: [
+      './my-awesome-lib/vite.config.mts',
+    ],
     coverage: {
       reportsDirectory: './coverage/my-app',
       provider: 'v8' as const,
