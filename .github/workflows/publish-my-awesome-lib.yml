@@ -1,0 +1,66 @@
+name: Publish my-awesome-lib to npm
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'my-awesome-lib/**'
+      - '.github/workflows/publish-my-awesome-lib.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write    # allow creating tags/commits for changelog
+
+concurrency:
+  group: publish-my-awesome-lib
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Release my-awesome-lib
+    runs-on: ubuntu-latest
+    env:
+      # Required for npm publish auth
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # full history for conventional commits & tags
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build library
+        run: pnpm nx build my-awesome-lib
+
+      - name: Configure npm auth
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+
+      - name: Configure git user
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Determine and bump version (conventional commits)
+        run: pnpm nx release version --projects=my-awesome-lib --yes
+
+      - name: Generate changelog
+        run: pnpm nx release changelog --projects=my-awesome-lib --yes
+
+      - name: Publish to npm (my-awesome-lib only)
+        run: pnpm nx release publish --projects=my-awesome-lib --yes
