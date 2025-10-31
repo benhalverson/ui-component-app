@@ -1,3 +1,4 @@
+
 <div class="app-container">
   <mat-toolbar color="primary">
     <span class="logo" routerLink="/" style="cursor: pointer; font-weight: 700;">
@@ -30,16 +31,4 @@
 </div>
 
 <!-- Global Modal -->
-@if (modalState$ | async; as modalState) {
-<lib-modal
-  [isOpen]="modalState.isOpen"
-  [title]="modalState.title"
-  [message]="modalState.message"
-  [confirmText]="modalState.confirmText"
-  [cancelText]="modalState.cancelText"
-  [showCancel]="modalState.showCancel"
-  [variant]="modalState.variant"
-  (confirmed)="onModalConfirm()"
-  (cancelled)="onModalCancel()"
-></lib-modal>
-}
+  <lib-modal (confirmed)="onModalConfirm()" (cancelled)="onModalCancel()"></lib-modal>

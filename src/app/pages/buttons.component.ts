@@ -48,7 +48,6 @@ export class ButtonsComponent {
     this.modalService.showDangerConfirm(
       'Are you sure you want to delete?',
       'Confirm Delete',
-      () => this.modalService.showSuccess('Item deleted!')
     );
   }
 }

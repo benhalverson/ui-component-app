@@ -3,6 +3,7 @@ import { Component, inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 export interface ModalConfig {
+  isOpen?: boolean;
   title?: string;
   message?: string;
   confirmText?: string;
@@ -10,7 +11,6 @@ export interface ModalConfig {
   showCancel?: boolean;
   variant?: 'default' | 'danger' | 'success' | 'warning';
 }
-
 @Component({
   selector: 'lib-modal',
   templateUrl: './modal.html',

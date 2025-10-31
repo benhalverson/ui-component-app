@@ -1,40 +1,36 @@
 import { Component, inject } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { LibModal } from '@benhalverson/my-awesome-lib';
+import { LibModalDialog as LibModal } from '@benhalverson/my-awesome-lib';
 import { ModalService } from './services/modal.service';
 import { ThemeService } from './services/theme.service';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
-  imports: [CommonModule, RouterModule, MatToolbarModule, MatButtonModule, LibModal],
+  imports: [LibModal, RouterLink, RouterOutlet, RouterLinkActive, MatToolbarModule, MatButtonModule],
   selector: 'app-root',
   templateUrl: './app.html',
-  styleUrl: './app.css',
+    styleUrls: ['./app.css'],
 })
 export class App {
   private modalService = inject(ModalService);
   themeService = inject(ThemeService);
-  modalState$ = this.modalService.modalState$;
   
   protected title = 'my-app';
   isLoggedIn = false;
   currentUser = '';
 
   onModalConfirm(): void {
-    const state = this.modalService.modalState.value;
-    if (state.onConfirm) {
-      state.onConfirm();
-    }
+    this.modalService.showConfirm(
+      'Are you sure you want to proceed?',
+      'Confirm Action'
+    );
     this.modalService.close();
   }
 
   onModalCancel(): void {
-    const state = this.modalService.modalState.value;
-    if (state.onCancel) {
-      state.onCancel();
-    }
+    this.modalService.showCancel();
+    
     this.modalService.close();
   }
 
