@@ -16,7 +16,7 @@ import { ModalService } from '../services/modal.service';
 
       <div data-testid="users-table">
       <lib-card title="Users Table" [elevated]="true">
-        <lib-table [columns]="userColumns" [data]="users"></lib-table>
+        <lib-table [columns]="userColumns" [data]="users"  [filterEnabled]="false" [pageSize]="50"></lib-table>
         <div footer>
           <div class="table-footer-actions">
             <lib-button variant="primary" (click)="onAddUser()">Add User</lib-button>

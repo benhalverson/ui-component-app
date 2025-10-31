@@ -5,13 +5,27 @@ import { MatSortModule, MatSort } from '@angular/material/sort';
 import { MatPaginatorModule, MatPaginator } from '@angular/material/paginator';
 
 export interface TableColumn {
+  /** Unique identifier for the column */
   key: string;
+  /** Display label for the column */
   label: string;
+  /** Whether the column is sortable */
   sortable?: boolean;
 }
 
 type RowRecord = Record<string, unknown>;
-
+/**
+ * A reusable table component with sorting, pagination, and filtering capabilities.
+ * Inputs:
+ * - columns: Array of column definitions (key, label, sortable).
+ * - data: Array of row data objects.
+ * - pageSize: Number of rows per page (default: 10).
+ * - pageSizeOptions: Options for rows per page (default: [5, 10, 25, 50]).
+ * - showFirstLastButtons: Whether to show first/last buttons in paginator (default: true).
+ * - stickyHeader: Whether the header row is sticky (default: true).
+ * - filterEnabled: Whether to show the filter input (default: true).
+ * - filterPlaceholder: Placeholder text for the filter input (default: 'Filter').  
+ */
 @Component({
   selector: 'lib-table',
   standalone: true,
@@ -138,14 +152,23 @@ type RowRecord = Record<string, unknown>;
   `]
 })
 
+
 export class LibTable implements AfterViewInit, OnChanges {
+  /** Columns to display in the table */
   @Input() columns: TableColumn[] = [];
+  /** Number of rows per page (default: 10) */
   @Input() pageSize = 10;
+  /** Options for rows per page (default: [5, 10, 25, 50]) */
   @Input() pageSizeOptions: number[] = [5, 10, 25, 50];
+  /** Whether to show first/last buttons in paginator (default: true) */
   @Input() showFirstLastButtons = true;
+  /** Whether the header row is sticky (default: true) */
   @Input() stickyHeader = true;
+  /** Whether to show the filter input (default: true) */
   @Input() filterEnabled = true;
+  /** Placeholder text for the filter input (default: 'Filter') */
   @Input() filterPlaceholder = 'Filter';
+  /** Data records to display in the table */
   @Input() set data(value: unknown[]) {
     this._data = value ?? [];
     this.dataSource.data = this._data as RowRecord[];
@@ -213,6 +236,7 @@ export class LibTable implements AfterViewInit, OnChanges {
     };
   }
 
+  /** Handle filter input changes */
   onFilterInput(value: string): void {
     this.dataSource.filter = (value ?? '').trim().toLowerCase();
     // Reset to first page when filtering changes to avoid empty pages
