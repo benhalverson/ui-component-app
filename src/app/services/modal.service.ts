@@ -1,4 +1,6 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { LibModalDialog } from '@benhalverson/my-awesome-lib';
 import { signalStore, withState, withMethods, patchState } from '@ngrx/signals';
 
 export type ModalVariant = 'default' | 'danger' | 'success' | 'warning';
@@ -39,7 +41,10 @@ export class ModalService extends signalStore(
       });
     },
 
+
     showSuccess(message: string, title = 'Success') {
+      console.log('Showing success modal');
+      this.modal.open(LibModalDialog, {data: store});
       patchState(store, {
         isOpen: true,
         title,
@@ -91,4 +96,7 @@ export class ModalService extends signalStore(
       patchState(store, { ...initialState });
     },
   }))
-) {}
+) {
+
+ modal = inject(MatDialog); 
+}

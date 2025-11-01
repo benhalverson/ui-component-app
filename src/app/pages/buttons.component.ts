@@ -33,6 +33,7 @@ export class ButtonsComponent {
 })`;
 
   onSave(): void {
+    console.log('Save button clicked');
     this.modalService.showSuccess('Changes saved!');
   }
 
